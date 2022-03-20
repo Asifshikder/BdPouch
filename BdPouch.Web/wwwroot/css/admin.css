@@ -1,0 +1,101 @@
+﻿
+.btn-theme {
+    background: #c7973e!important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.btn-cancel {
+    background: #6c6c6c !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.btn-create {
+    background: #0fb992 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.btn-update {
+    background: #17a2b8 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+.btn-import {
+    background: #9f3676 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.btn-upload {
+    background: #25d910 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.btn-delete {
+    background: #ff0000 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.btn-details {
+    background: #ffc107 !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.form-theme {
+    border-radius: 0px;
+    border: 2px solid #c7973e;
+}
+
+a {
+    color: #c7973e;
+}
+
+    a:hover {
+        color: #ffd800;
+        text-decoration: none !important;
+    }
+
+.card-header {
+    background-color: #c7973e!important;
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+.card {
+    border-radius: 0rem!important;
+}
+
+.breadcrumb {
+    border-radius: 0rem;
+}
+.card-title {
+    font-weight: 700!important;
+}
+/*.form-control-check {
+    display: block;
+    width: 5%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}*/
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #006b7e !important;
+}
+
+.theme-text{
+    color:#c7973e!important;
+}

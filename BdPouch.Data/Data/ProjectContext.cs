@@ -11,6 +11,7 @@ using BdPouch.Data.Data.SeedData;
 using BdPouch.Core.Domain.Auth;
 using BdPouch.Core.Domain.cms;
 using BdPouch.Core.Domain.Core;
+using BdPouch.Core.Domain.Settings;
 
 namespace BdPouch.Data.Data
 {
@@ -28,6 +29,9 @@ namespace BdPouch.Data.Data
         public virtual DbSet<Company> Company { get; set; }
         public virtual DbSet<CountryCode> CountryCode { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Contacts> Contacts { get; set; }
+        public virtual DbSet<MainSeo> MainSeo { get; set; }
+        public virtual DbSet<SiteSetting> SiteSetting { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

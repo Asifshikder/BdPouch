@@ -1,0 +1,197 @@
+﻿<aside class="main-sidebar sidebar-light-info elevation-4">
+    <a href="/Admin/Home/Index" class="brand-link text-center">
+        <img src="~/assets/logo.png" alt="Logo" class="brand-image">
+        <span class="brand-text font-weight-light"><strong>BD POUCH</strong></span>
+    </a>
+
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                <li class="nav-item">
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Core</li>
+                <li class="nav-item" id="Catalogtreeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Core
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Category" class="nav-link" id="CategoryNav">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Company</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Scale" class="nav-link" id="ScaleNav">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Product</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item" id="productsnav">
+                    <a href="#" class="nav-link" id="producttreeview">
+                        <i class="nav-icon fas fa-sitemap"></i>
+                        <p>
+                            CMS & Pages
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-area="Manage" asp-controller="Product" asp-action="Index" class="nav-link" id="productlistnav">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>About us</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="Manage" asp-controller="Product" asp-action="Create"class="nav-link"  id="productCreatenav">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Contact page</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="Manage" asp-controller="Product" asp-action="Pricing" class="nav-link" id="productpricingnav">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Home page</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-area="Manage" asp-controller="Bundle" asp-action="Index" class="nav-link" id="bundlenav">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Home banner</p>
+                            </a>
+                        </li>
+                     
+                    </ul>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-basket"></i>
+                        <p>
+                            Orders
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="pages/examples/invoice.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Order List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/profile.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Cart Summery</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/e-commerce.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Extended</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/examples/projects.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Report</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-header">Others</li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>Contacts</p>
+                    </a>
+                </li>
+                <li class="nav-header">Contents</li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fab fa-cog"></i>
+                        <p>
+                            Settings
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="pages/search/simple.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Blog Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/search/enhanced.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Blog post</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-newspaper"></i>
+                        <p>
+                            News
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="pages/search/simple.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>News Category</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="pages/search/enhanced.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>News Items</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header">Configuration</li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>Site Settings</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-mail-bulk"></i>
+                        <p>Email Settings</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fab fa-searchengin"></i>
+                        <p>Index SEO</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
