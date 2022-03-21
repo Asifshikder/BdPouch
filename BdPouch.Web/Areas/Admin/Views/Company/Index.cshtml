@@ -1,0 +1,114 @@
+﻿@model PagedModel<Company>
+@{
+    ViewData["Title"] = "Index";
+    int SN = Model.FirstSerialNumber;
+    PagedList pager = new PagedList();
+    int pageNo = 0;
+    if (Model.PagedList != null)
+    {
+        pager = Model.PagedList;
+        pageNo = Model.PagedList.PageIndex;
+        SN = ((Model.PagedList.PageIndex * Model.PagedList.PageSize) - Model.PagedList.PageSize) + 1;
+    }
+
+    string urlinstring = "/Admin/Company/GetPaged";
+    Pager pagemodel = new Pager() { PagedList = pager, StringUrl = urlinstring, FunctionName = "LoadPagination" };
+}
+<div class="content-header">
+    <div class="container-fluid ">
+        <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
+                <li class="breadcrumb-item active">Company</li>
+            </ol>
+            <div>
+                <a asp-action="Create" class="btn btn-sm btn-theme"><i class="fa fa-plus"></i>Add New</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <input type="hidden" value="@urlinstring" id="urlstrings" />
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex w-100 justify-content-between">
+                    <div class="">
+                        <span class="card-title"> <i class="fas fa-list"></i> Filter</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row pb-2">
+                    <div class="col-sm-12">
+                        <h6 class="text-themecolor">Filter</h6>
+                    </div>
+                    <div class="col-sm-12 pb-2">
+                        <input class="form-control col-sm-11 form-theme" id="term" onchange="LoadPagination()" placeholder="Ex: example" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title"> <i class="fas fa-list"></i> Company List</span>
+            </div>
+            <div class="card-body" id="paginatedsection">
+
+                <div class="table-responsive">
+                    <table class="table table-hovered table-sm table-striped table-bordered">
+                        <thead class="secondary">
+                            <tr>
+                                <th>#</th>
+                                <th>Logo</th>
+                                <th>Name</th>
+                                <th>Brand Name</th>
+                                <th>Phone number</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Models)
+                            {
+                                var rowid = ("row" + item.Id);
+                                <tr id="@rowid">
+                                    <td>@SN</td>
+                                    <td><img src="@Url.Content(item.CompanyLogo)" height="50" /></td>
+                                    <td>@item.CompanyName</td>
+                                    <td>@item.CompanyBrandName</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.Email</td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-update"><i class="fas fa-pen"></i></a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-details"><i class="fas fa-info"></i></a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-delete"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                SN++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="text-right">
+                    @await Html.PartialAsync("_pagingPartialAjax", pagemodel)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+<script src="~/js/CompanyPagination.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#productnav").addClass('menu-open');
+        $("#productitem").addClass('active');
+        $("#productlistitem").addClass('active');
+    });
+</script>
+}
