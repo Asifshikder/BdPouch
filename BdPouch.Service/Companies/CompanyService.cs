@@ -54,12 +54,15 @@ namespace BdPouch.Service.Companies
 
         public async Task<bool> DeleteAsync(Company model)
         {
+            if (!string.IsNullOrEmpty(model.CompanyLogo))
+                mediaService.DeleteFile(model.CompanyLogo);
             return await repository.DeleteAsync(model);
         }
 
         public async Task<bool> DeleteById(long id)
         {
-            return await repository.DeleteByIdAsync(id);
+            var model =await GetByIdAsync(id);
+            return await repository.DeleteAsync(model);
         }
 
         public async Task<IEnumerable<Company>> GetAllAsync()

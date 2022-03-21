@@ -15,7 +15,10 @@
     Pager pagemodel = new Pager() { PagedList = pager, StringUrl = urlinstring, FunctionName = "LoadPagination" };
 }
 
-<div class="card-body" id="paginatedsection">
+<div class="card-header">
+    <span class="card-title"> <i class="fas fa-list"></i> Company List</span>
+</div>
+<div class="card-body">
 
     <div class="table-responsive">
         <table class="table table-hovered table-sm table-striped table-bordered">
@@ -51,5 +54,10 @@
                 }
             </tbody>
         </table>
+    </div>
+</div>
+<div class="card-footer">
+    <div class="text-right">
+        @await Html.PartialAsync("_pagingPartialAjax", pagemodel)
     </div>
 </div>
