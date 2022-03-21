@@ -25,4 +25,8 @@
     <ProjectReference Include="..\BdPouch.Service\BdPouch.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\useruploads\" />
+  </ItemGroup>
+
 </Project>

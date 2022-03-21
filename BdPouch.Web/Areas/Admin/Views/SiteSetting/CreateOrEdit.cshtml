@@ -1,4 +1,4 @@
-﻿@model MainSeo
+﻿@model SiteSettingViewModel
 @{
     ViewData["Title"] = "Configure website";
 }
@@ -7,7 +7,7 @@
         <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
             <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Admin/Sit/Index">SEO</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/SiteSetting/Index">SEO</a></li>
                 <li class="breadcrumb-item active">Configure</li>
             </ol>
             <div>
@@ -24,41 +24,31 @@
             <div class="card-header">
                 <div class="d-flex w-100">
                     <div class="">
-                        <span class="card-title"> <i class="fas fa-list"></i> Seo Contents</span>
+                        <span class="card-title"> <i class="fas fa-list"></i> Site setting</span>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form asp-action="CreateOrEdit" method="post">
+                        <form asp-action="CreateOrEdit" method="post" enctype="multipart/form-data">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="form-group">
-                                <label asp-for="Title" class="control-label"></label>
-                                <input asp-for="Title" class="form-control form-theme" required />
-                                <span asp-validation-for="Title" class="text-danger"></span>
+                                <label asp-for="SiteName" class="control-label"></label>
+                                <input asp-for="SiteName" class="form-control form-theme" required />
+                                <span asp-validation-for="SiteName" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Description" class="control-label"></label>
-                                <textarea asp-for="Description" class="form-control form-theme" required></textarea>
-                                <span asp-validation-for="Description" class="text-danger"></span>
+                                <label asp-for="Logo" class="control-label"></label>
+                                <input asp-for="LogoFile" class="form-control form-theme dropify" data-default-file="@Url.Content(Model.Logo)" />
                             </div>
                             <div class="form-group">
-                                <label asp-for="Author" class="control-label"></label>
-                                <input asp-for="Author" class="form-control form-theme" required />
-                                <span asp-validation-for="Author" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Keywords" class="control-label"></label>
-                                <input asp-for="Keywords" class="form-control form-theme" required />
-                                <span asp-validation-for="Keywords" class="text-danger"></span>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Tags" class="control-label"></label>
-                                <input asp-for="Tags" class="form-control form-theme" required />
-                                <span asp-validation-for="Tags" class="text-danger"></span>
+                                <label asp-for="Favicon" class="control-label"></label>
+                                <input asp-for="FaviconFile" class="form-control form-theme dropify" data-default-file="@Url.Content(Model.Favicon)"  />
                             </div>
                             <input hidden asp-for="Id"/>
+                            <input hidden asp-for="Logo"/>
+                            <input hidden asp-for="Favicon"/>
                             <div class="form-group float-right">
                                 <a asp-action="Index" class="btn btn-sm btn-cancel">Cancel</a>
                                 <input type="submit" value="Configure" class="btn btn-sm btn-create" />

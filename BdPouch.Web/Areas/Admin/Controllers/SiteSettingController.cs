@@ -22,7 +22,7 @@ namespace BdPouch.Web.Areas.Admin.Controllers
         {
             if (id != null)
             {
-                return View(await siteSettingService.GetSiteSetting());
+                return View(await siteSettingService.GetSiteSettingViewModel());
             }
             return View(new SiteSettingViewModel() { });
         }
