@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BdPouch.Core\BdPouch.Core.csproj" />
+    <ProjectReference Include="..\BdPouch.Data\BdPouch.Data.csproj" />
+  </ItemGroup>
+
 </Project>

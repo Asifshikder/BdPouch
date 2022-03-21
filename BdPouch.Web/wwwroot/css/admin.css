@@ -1,6 +1,6 @@
 ﻿
 .btn-theme {
-    background: #c7973e!important;
+    background: #079aca !important;
     color: #fff !important;
     border-radius: 0px !important;
 }
@@ -48,11 +48,11 @@
 
 .form-theme {
     border-radius: 0px;
-    border: 2px solid #c7973e;
+    border: 1px solid #c9dee4;
 }
 
 a {
-    color: #c7973e;
+    color: #096c7e;
 }
 
     a:hover {
@@ -61,7 +61,7 @@ a {
     }
 
 .card-header {
-    background-color: #c7973e!important;
+    background-color: #096c7e !important;
     border-top-left-radius: 0rem;
     border-top-right-radius: 0rem;
 }
@@ -73,6 +73,7 @@ a {
     border-radius: 0rem;
 }
 .card-title {
+    color:white;
     font-weight: 700!important;
 }
 /*.form-control-check {
@@ -96,6 +97,6 @@ a {
     background-color: #006b7e !important;
 }
 
-.theme-text{
-    color:#c7973e!important;
+.theme-text {
+    color: #096c7e !important;
 }

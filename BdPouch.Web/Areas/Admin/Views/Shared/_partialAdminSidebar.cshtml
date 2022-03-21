@@ -79,43 +79,6 @@
                     </ul>
                 </li>
                 
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-basket"></i>
-                        <p>
-                            Orders
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/examples/invoice.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Order List</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Cart Summery</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/e-commerce.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Extended</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/projects.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Report</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-
                 <li class="nav-header">Others</li>
 
                 <li class="nav-item">
@@ -174,19 +137,13 @@
                 </li>
                 <li class="nav-header">Configuration</li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a asp-area="Admin" asp-controller="SiteSetting" asp-action="Index" class="nav-link" id="settupsite">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>Site Settings</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-mail-bulk"></i>
-                        <p>Email Settings</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a asp-area="Admin" asp-controller="SeoSetup" asp-action="Index" class="nav-link" id="seoitem">
                         <i class="nav-icon fab fa-searchengin"></i>
                         <p>Index SEO</p>
                     </a>
