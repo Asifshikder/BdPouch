@@ -1,0 +1,64 @@
+﻿@model PagedModel<Product>
+@{
+    ViewData["Title"] = "Index";
+    int SN = Model.FirstSerialNumber;
+    PagedList pager = new PagedList();
+    int pageNo = 0;
+    if (Model.PagedList != null)
+    {
+        pager = Model.PagedList;
+        pageNo = Model.PagedList.PageIndex;
+        SN = ((Model.PagedList.PageIndex * Model.PagedList.PageSize) - Model.PagedList.PageSize) + 1;
+    }
+
+    string urlinstring = "/Admin/Product/GetPaged";
+    Pager pagemodel = new Pager() { PagedList = pager, StringUrl = urlinstring, FunctionName = "LoadPagination" };
+}
+<div class="card-header">
+    <span class="card-title"> <i class="fas fa-list"></i> Product List</span>
+</div>
+<div class="card-body">
+
+    <div class="table-responsive">
+        <table class="table table-hovered table-sm table-striped table-bordered">
+            <thead class="secondary">
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>EAN</th>
+                    <th>Price</th>
+                    <th>Company</th>
+                    <th>Origin</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Models)
+                {
+                    var rowid = ("row" + item.Id);
+                    <tr id="@rowid">
+                        <td>@SN</td>
+                        <td><img src="@Url.Content(item.ProductImage)" height="50" /></td>
+                        <td>@item.Title</td>
+                        <td>@item.EAN_13</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.Company.CompanyName</td>
+                        <td>@item.CountryOfOrigin</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-update"><i class="fas fa-pen"></i></a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-details"><i class="fas fa-info"></i></a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-delete"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    SN++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card-footer">
+    <div class="text-right">
+        @await Html.PartialAsync("_pagingPartialAjax", pagemodel)
+    </div>
+</div>

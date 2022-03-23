@@ -3,6 +3,7 @@ using BdPouch.Core.Domain.Core;
 using BdPouch.Data.Extensions;
 using BdPouch.Data.Repository;
 using BdPouch.Service.Companies.Models;
+using BdPouch.Service.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,13 @@ namespace BdPouch.Service.Companies
     {
         private IRepository<Company> repository;
         private IMediaService mediaService;
+        private IProductService productService;
 
-        public CompanyService(IRepository<Company> repository, IMediaService mediaService)
+        public CompanyService(IRepository<Company> repository, IMediaService mediaService,IProductService productService)
         {
             this.repository = repository;
             this.mediaService = mediaService;
+            this.productService = productService;
         }
         public async Task<Company> AddAsync(CompanyViewModel model)
         {
@@ -56,6 +59,7 @@ namespace BdPouch.Service.Companies
         {
             if (!string.IsNullOrEmpty(model.CompanyLogo))
                 mediaService.DeleteFile(model.CompanyLogo);
+            await productService.DeleteByCompanyId(model.Id);
             return await repository.DeleteAsync(model);
         }
 

@@ -44,10 +44,10 @@
                                 <input asp-for="CompanyBrandName" class="form-control form-theme" required></input>
                                 <span asp-validation-for="CompanyBrandName" class="text-danger"></span>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label asp-for="CompanyLogoFile" class="control-label"></label>
-                                <input asp-for="CompanyLogoFile" class="form-control form-theme dropify"  data-default-file="@Url.Content(Model.CompanyLogo)"/>
+                                <input asp-for="CompanyLogoFile" class="form-control form-theme dropify" data-default-file="@Url.Content(Model.CompanyLogo)" />
                                 <span asp-validation-for="CompanyLogoFile" class="text-danger"></span>
                             </div>
                             <div class="form-group">
@@ -103,10 +103,10 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-    <script>
-        $(document).ready(function () {
-            $("#seoitem").addClass('active');
-            $("#seoitem").addClass('active');
-        });
-    </script>
+<script>
+       $(document).ready(function () {
+        $("#Catalogtreeview").addClass('menu-open');
+        $("#companynav").addClass('active');
+    });
+</script>
 }

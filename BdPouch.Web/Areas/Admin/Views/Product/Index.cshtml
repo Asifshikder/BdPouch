@@ -1,4 +1,4 @@
-﻿@model PagedModel<Company>
+﻿@model PagedModel<Product>
 @{
     ViewData["Title"] = "Index";
     int SN = Model.FirstSerialNumber;
@@ -11,7 +11,7 @@
         SN = ((Model.PagedList.PageIndex * Model.PagedList.PageSize) - Model.PagedList.PageSize) + 1;
     }
 
-    string urlinstring = "/Admin/Company/GetPaged";
+    string urlinstring = "/Admin/Product/GetPaged";
     Pager pagemodel = new Pager() { PagedList = pager, StringUrl = urlinstring, FunctionName = "LoadPagination" };
 }
 <div class="content-header">
@@ -19,7 +19,7 @@
         <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
             <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
-                <li class="breadcrumb-item active">Company</li>
+                <li class="breadcrumb-item active">Product</li>
             </ol>
             <div>
                 <a asp-action="Create" class="btn btn-sm btn-theme"><i class="fa fa-plus"></i>Add New</a>
@@ -42,10 +42,12 @@
             </div>
             <div class="card-body">
                 <div class="row pb-2">
-                    <div class="col-sm-12">
-                        <h6 class="text-themecolor">Filter</h6>
+                    <div class="col-sm-6 pb-2">
+                        <select asp-items="ViewBag.companylist" class="form-control col-sm-11 form-theme" id="company"  onchange="LoadPagination()">
+                            <option value="0">Select company</option>
+                        </select>
                     </div>
-                    <div class="col-sm-12 pb-2">
+                    <div class="col-sm-6 pb-2">
                         <input class="form-control col-sm-11 form-theme" id="terms" onchange="LoadPagination()" placeholder="Ex: example" />
                     </div>
                 </div>
@@ -53,7 +55,7 @@
         </div>
         <div class="card"id="paginatedsection">
             <div class="card-header">
-                <span class="card-title"> <i class="fas fa-list"></i> Company List</span>
+                <span class="card-title"> <i class="fas fa-list"></i> Product List</span>
             </div>
             <div class="card-body" >
 
@@ -62,11 +64,12 @@
                         <thead class="secondary">
                             <tr>
                                 <th>#</th>
-                                <th>Logo</th>
+                                <th>Image</th>
                                 <th>Name</th>
-                                <th>Brand Name</th>
-                                <th>Phone number</th>
-                                <th>Email</th>
+                                <th>EAN</th>
+                                <th>Price</th>
+                                <th>Company</th>
+                                <th>Origin</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -76,11 +79,12 @@
                                 var rowid = ("row" + item.Id);
                                 <tr id="@rowid">
                                     <td>@SN</td>
-                                    <td><img src="@Url.Content(item.CompanyLogo)" height="50" /></td>
-                                    <td>@item.CompanyName</td>
-                                    <td>@item.CompanyBrandName</td>
-                                    <td>@item.PhoneNumber</td>
-                                    <td>@item.Email</td>
+                                    <td><img src="@Url.Content(item.ProductImage)" height="50" /></td>
+                                    <td>@item.Title</td>
+                                    <td>@item.EAN_13</td>
+                                    <td>@item.UnitPrice</td>
+                                    <td>@item.Company.CompanyName</td>
+                                    <td>@item.CountryOfOrigin</td>
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-update"><i class="fas fa-pen"></i></a>
                                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-details"><i class="fas fa-info"></i></a>
@@ -103,11 +107,11 @@
 </section>
 
 @section Scripts{
-<script src="~/js/CompanyPagination.js"></script>
+<script src="~/js/ProductPagination.js"></script>
 <script>
     $(document).ready(function () {
         $("#Catalogtreeview").addClass('menu-open');
-        $("#companynav").addClass('active');
+        $("#productnav").addClass('active');
     });
 </script>
 }

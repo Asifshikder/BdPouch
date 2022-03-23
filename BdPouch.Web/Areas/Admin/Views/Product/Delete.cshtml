@@ -1,4 +1,4 @@
-﻿@model Company
+﻿@model Product
 @{
     ViewData["Title"] = "Delete";
 }
@@ -7,7 +7,7 @@
         <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
             <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Admin/Company/Index">Company</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/Product/Index">Product</a></li>
                 <li class="breadcrumb-item active">Delete</li>
             </ol>
             <div>
@@ -24,38 +24,37 @@
             <div class="card-header">
                 <div class="d-flex w-100">
                     <div class="">
-                        <span class="card-title"><i class="fas fa-list"></i> Delete @Model.CompanyName</span>
+                        <span class="card-title"><i class="fas fa-list"></i> Delete @Model.Title</span>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 <div>
 
-                    <h4 class="text-themecolor">@Model.CompanyName</h4>
+                    <h4 class="text-themecolor">@Model.Title</h4>
                     <hr />
                     <dl class="row">
-                        <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompanyName)
+                         <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Title)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.CompanyName)
+                            @Html.DisplayFor(model => model.Title)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompanyBrandName)
+                            @Html.DisplayNameFor(model => model.Company)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.CompanyBrandName)
+                            @Html.DisplayFor(model => model.Company.CompanyName)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompanyLogo)
+                            @Html.DisplayNameFor(model => model.ProductImage)
                         </dt>
                         <dd class="col-sm-10">
-                            @if (!string.IsNullOrEmpty(Model.CompanyLogo))
+                            @if (!string.IsNullOrEmpty(Model.ProductImage))
                             {
-                                <img src="@Url.Content(Model.CompanyLogo)" height="100" />
+                                <img src="@Url.Content(Model.ProductImage)" height="100" />
                             }
                         </dd>
-                      
 
                     </dl>
                 </div>
@@ -72,7 +71,7 @@
 <script>
      $(document).ready(function () {
         $("#Catalogtreeview").addClass('menu-open');
-        $("#companynav").addClass('active');
+        $("#productnav").addClass('active');
     });
     </script>
 

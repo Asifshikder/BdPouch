@@ -19,6 +19,7 @@ namespace BdPouch.Service.Products
         Task<bool> DeleteById(long id);
         Task<bool> DeleteAsync(Product model);
         bool CheckIfExists(long id);
+        Task DeleteByCompanyId(long companyId);
         Task<PagedModel<Product>> GetPagedListAsync(int page, int pageSize,long companyid, string terms);
         Task<ProductViewModel> GetViewModelByIdAsync(long id);
     }

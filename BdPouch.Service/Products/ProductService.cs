@@ -15,13 +15,13 @@ namespace BdPouch.Service.Products
     public class ProductService : IProductService
     {
         private IRepository<Product> repository;
-        private ICompanyService companyService;
+        private IRepository<Company> companyrepository;
         private IMediaService mediaService;
 
-        public ProductService(IRepository<Product> repository, ICompanyService companyService, IMediaService mediaService)
+        public ProductService(IRepository<Product> repository, IRepository<Company> companyrepository, IMediaService mediaService)
         {
             this.repository = repository;
-            this.companyService = companyService;
+            this.companyrepository = companyrepository;
             this.mediaService = mediaService;
         }
         public async Task<Product> AddAsync(ProductViewModel model)
@@ -53,12 +53,24 @@ namespace BdPouch.Service.Products
 
         public async Task<bool> DeleteAsync(Product model)
         {
+            if (!String.IsNullOrEmpty(model.ProductImage))
+                mediaService.DeleteFile(model.ProductImage);
             return await repository.DeleteAsync(model);
+        }
+
+        public async Task DeleteByCompanyId(long companyId)
+        {
+            var lists = repository.AllAsIQueryable().Where(s => s.CompanyId == companyId);
+            foreach (var item in lists)
+            {
+                await repository.DeleteAsync(item);
+            }
         }
 
         public async Task<bool> DeleteById(long id)
         {
-            return await repository.DeleteByIdAsync(id);
+            var product = await GetByIdAsync(id);
+            return await repository.DeleteAsync(product);
         }
 
         public async Task<IEnumerable<Product>> GetAllAsync()
@@ -82,9 +94,9 @@ namespace BdPouch.Service.Products
             var pagedlist = secondpart.Skip(recSkip).Take(pageSize);
             var pagers = new PagedList(resCount, page, pageSize);
             int FirstSerialNumber = ((page * pageSize) - pageSize) + 1;
-            foreach(var item in pagedlist)
+            foreach (var item in pagedlist)
             {
-                item.Company = await companyService.GetByIdAsync(item.CompanyId);
+                item.Company = await companyrepository.GetByIdAsync(item.CompanyId);
                 products.Add(item);
             }
             PagedModel<Product> pagedModel = new PagedModel<Product>()
@@ -99,12 +111,12 @@ namespace BdPouch.Service.Products
 
         public async Task<ProductViewModel> GetViewModelByIdAsync(long id)
         {
-           var model = await repository.GetByIdAsync(id);
+            var model = await repository.GetByIdAsync(id);
             return new ProductViewModel()
             {
                 EAN_13 = model.EAN_13,
                 Id = model.Id,
-                Company = await companyService.GetByIdAsync(model.CompanyId),
+                Company = await companyrepository.GetByIdAsync(model.CompanyId),
                 Category = model.Category,
                 CompanyId = model.CompanyId,
                 CountryOfOrigin = model.CountryOfOrigin,
@@ -126,10 +138,10 @@ namespace BdPouch.Service.Products
         public async Task<bool> UpdateAsync(ProductViewModel model)
         {
             if (model.ProductImageFile != null)
-                model.ProductImage = mediaService.UpdateFile(model.ProductImage,model.ProductImageFile);
+                model.ProductImage = mediaService.UpdateFile(model.ProductImage, model.ProductImageFile);
             Product product = new Product()
             {
-                Id= model.Id,
+                Id = model.Id,
                 EAN_13 = model.EAN_13,
                 Category = model.Category,
                 CompanyId = model.CompanyId,

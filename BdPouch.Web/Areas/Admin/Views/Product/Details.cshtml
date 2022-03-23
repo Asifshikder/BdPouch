@@ -1,4 +1,4 @@
-﻿@model Company
+﻿@model Product
 @{
     ViewData["Title"] = "Details";
 }
@@ -7,7 +7,7 @@
         <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
             <ol class="breadcrumb mb-0 p-0">
                 <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
-                <li class="breadcrumb-item"><a href="/Admin/Company/Index">Company</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/product/Index">Company</a></li>
                 <li class="breadcrumb-item active">Details</li>
             </ol>
             <div>
@@ -24,35 +24,35 @@
             <div class="card-header">
                 <div class="d-flex w-100">
                     <div class="">
-                        <span class="card-title"><i class="fas fa-list"></i> Details Of @Model.CompanyName</span>
+                        <span class="card-title"><i class="fas fa-list"></i> Details Of @Model.Title</span>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 <div>
 
-                    <h4 class="text-themecolor">@Model.CompanyName</h4>
+                    <h4 class="text-themecolor">@Model.Title</h4>
                     <hr />
                     <dl class="row">
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompanyName)
+                            @Html.DisplayNameFor(model => model.Title)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.CompanyName)
+                            @Html.DisplayFor(model => model.Title)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompanyBrandName)
+                            @Html.DisplayNameFor(model => model.Company)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.CompanyBrandName)
+                            @Html.DisplayFor(model => model.Company.CompanyName)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.CompanyLogo)
+                            @Html.DisplayNameFor(model => model.ProductImage)
                         </dt>
                         <dd class="col-sm-10">
-                            @if (!string.IsNullOrEmpty(Model.CompanyLogo))
+                            @if (!string.IsNullOrEmpty(Model.ProductImage))
                             {
-                                <img src="@Url.Content(Model.CompanyLogo)" height="100" />
+                                <img src="@Url.Content(Model.ProductImage)" height="100" />
                             }
                         </dd>
                         <dt class="col-sm-2">
@@ -62,40 +62,46 @@
                             @Html.DisplayFor(model=>model.ShortDescription)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Email)
+                            @Html.DisplayNameFor(model => model.Category)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model=>model.Email)
+                            @Html.DisplayFor(model=>model.Category)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.PhoneNumber)
+                            @Html.DisplayNameFor(model => model.CountryOfOrigin)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model=>model.PhoneNumber)
+                            @Html.DisplayFor(model=>model.CountryOfOrigin)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.OfficeAddress)
+                            @Html.DisplayNameFor(model => model.EAN_13)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model=>model.OfficeAddress)
+                            @Html.DisplayFor(model=>model.EAN_13)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.FactoryAddressDetails)
+                            @Html.DisplayNameFor(model => model.Weight_SKU)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model=>model.FactoryAddressDetails)
+                            @Html.DisplayFor(model=>model.Weight_SKU)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.FacebookUrl)
+                            @Html.DisplayNameFor(model => model.Packaging)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model=>model.FacebookUrl)
+                            @Html.DisplayFor(model=>model.Packaging)
                         </dd>
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Website)
+                            @Html.DisplayNameFor(model => model.Feature)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model=>model.Website)
+                            @Html.DisplayFor(model=>model.Feature)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.UnitPrice)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model=>model.UnitPrice)
                         </dd>
 
                     </dl>
@@ -113,7 +119,7 @@
 <script>
   $(document).ready(function () {
         $("#Catalogtreeview").addClass('menu-open');
-        $("#companynav").addClass('active');
+        $("#productnav").addClass('active');
     });   
 </script>
 
