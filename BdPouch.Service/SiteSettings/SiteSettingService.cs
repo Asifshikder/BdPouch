@@ -23,6 +23,10 @@ namespace BdPouch.Service.SiteSettings
 
         public async Task<SiteSetting> Create(SiteSettingViewModel model)
         {
+            if (CheckIfAny())
+            {
+                return null;
+            }
             if (model.FaviconFile != null)
                 model.Favicon = mediaService.UploadFile(model.FaviconFile);
             if(model.LogoFile!=null)
@@ -34,6 +38,11 @@ namespace BdPouch.Service.SiteSettings
                 Logo = model.Logo,
             };
             return await repository.AddAsync(siteSetting);
+        }
+
+        public bool CheckIfAny()
+        {
+            return repository.AllAsIQueryable().Any();
         }
 
         public async Task<SiteSetting> GetSiteSetting()

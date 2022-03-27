@@ -39,11 +39,10 @@
                                 <p>Product</p>
                             </a>
                         </li>
-                        
                     </ul>
                 </li>
                 <li class="nav-item" id="productsnav">
-                    <a href="#" class="nav-link" id="producttreeview">
+                    <a href="#" class="nav-link" id="cmstree">
                         <i class="nav-icon fas fa-sitemap"></i>
                         <p>
                             CMS & Pages
@@ -52,25 +51,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a asp-area="Manage" asp-controller="Product" asp-action="Index" class="nav-link" id="productlistnav">
+                            <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="nav-link" id="productlistnav">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>About us</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-area="Manage" asp-controller="Product" asp-action="Create"class="nav-link"  id="productCreatenav">
+                            <a asp-area="Admin" asp-controller="Product" asp-action="Create"class="nav-link"  id="productCreatenav">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Contact page</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-area="Manage" asp-controller="Product" asp-action="Pricing" class="nav-link" id="productpricingnav">
+                            <a asp-area="Admin" asp-controller="HomePage" asp-action="Index" class="nav-link" id="homepagenav">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Home page</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-area="Manage" asp-controller="Bundle" asp-action="Index" class="nav-link" id="bundlenav">
+                            <a asp-area="Admin" asp-controller="Bundle" asp-action="Index" class="nav-link" id="bundlenav">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Home banner</p>
                             </a>
@@ -87,54 +86,7 @@
                         <p>Contacts</p>
                     </a>
                 </li>
-                <li class="nav-header">Contents</li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fab fa-cog"></i>
-                        <p>
-                            Settings
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/search/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Blog Category</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/search/enhanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Blog post</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-newspaper"></i>
-                        <p>
-                            News
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/search/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>News Category</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/search/enhanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>News Items</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+            
                 <li class="nav-header">Configuration</li>
                 <li class="nav-item">
                     <a asp-area="Admin" asp-controller="SiteSetting" asp-action="Index" class="nav-link" id="settupsite">
