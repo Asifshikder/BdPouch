@@ -1,8 +1,398 @@
-﻿@{
+﻿@model HomePage
+@{
     ViewData["Title"] = "Home Page";
-}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+}
+@await Component.InvokeAsync("BannerInfo")
+
+
+<div class="display-catalog">
+    <div class="display-catalog-title text-center">
+        <h4>
+            Our top satisfied clients
+        </h4>
+        <p class="tb-alert-info mt-2">
+            Our top satisfied cleints are happy with our service. Our satisfied clients are our Journey History!
+        </p>
+    </div>
+    <div class=" mt-4">
+        <div class="row">
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-6.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Slider Revolution
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
 </div>
+
+<div class="display-catalog">
+    <div class="display-catalog-title text-center">
+        <h4>
+            7+ Premium Plugins
+            Included with Webify.
+        </h4>
+        <p class="tb-alert-info mt-2">
+            None of these premium plugins are must-required for Webify theme.
+            Install these only when you want to use features from the plugins.
+        </p>
+    </div>
+    <div class=" mt-4">
+        <div class="row">
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-6.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Slider Revolution
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-5.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Layer Slider
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-7.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Layer Slider
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-6.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Slider Revolution
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-5.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Layer Slider
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 display-catalog-content-two mb-3">
+                <div class="display-items-tech-two">
+                    <div class="item-img-two">
+                        <img src="~/assets/images/p-7.png" height="73" class=" display-item-image" />
+                    </div>
+                    <div class="pt-auto-two">
+                        <div class="tb-iconbox-info">
+                            <h3 class="tb-iconbox-title">
+                                Layer Slider
+                            </h3>
+                            <span class="tb-iconbox-label tb-color1">Slider</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="deft-products-block">
+    <div class="products-block-title_container">
+        <h2 class="products-block-title">
+            Premium Products
+        </h2>
+    </div>
+    <div>
+        <div class="deft-Products-list">
+
+            <div class="row">
+
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                    <div class="deft-Products shadow">
+
+                        <div class="product-image-links">
+                            <a href="/ProductDetails/Index" class="product-image-link btn btn_1 btn-block" rel="noopener noreferrer nofollow" target="_blank">
+                                Live Demo
+                            </a>
+                            <a href="/ProductDetails/Index" class="product-image-link btn btn_3 btn-block">
+                                Details
+                            </a>
+                        </div>
+
+                        <div class="product-image-wrapper">
+                            <img src="Url.Content(item.ThumbnailImage)" />
+                        </div>
+
+                        <div class="p-2 mb-3">
+                            <span class="product-sale-label d-flex mb-2 mt-3 w-100">
+                                <img style="width:20px;height:20px;margin-right:5px" src="~/assets/images/favicon.svg" />
+                                <span class="font-weight-bold">item.Title .....</span>
+                            </span>
+
+                            <div class="product-info-line text-center">
+                                <div class="rating product-rating">
+                                    <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                    <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                    <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                    <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                    <span class="rating-stars  "><i class="far fa-star"></i> </span>
+                                </div>
+
+                            </div>
+
+                            <div class="product-info-line mb-2 mt-3 w-100 d-flex justify-content-between">
+                                <div class="product-sales">
+                                    <span class="product-sales_amount">
+                                        4334
+                                    </span> Sales
+                                </div>
+
+                                <div class="d-flex">
+                                    <div class="product-price_regular mr-2 mt-1">$ item.OldPrice</div>
+                                    <div class="product-price product-price_discount">
+                                        $item.NewPrice
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div class="deft-products-block mt-5">
+    <div class="products-block-title_container">
+        <h2 class="products-block-title">
+            Premium Products
+        </h2>
+    </div>
+
+    <div class="deft-Products-list">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="deft-Products shadow">
+                    <div class="product-image-wrapper">
+                        <img src="~/assets/images/p-1.png" />
+                    </div>
+
+                    <div class="p-4 mb-3">
+                        <span class="product-sale-label d-flex mb-2 mt-3 w-100">
+                            <img style="width:20px;height:20px;margin-right:5px" src="~/assets/images/favicon.svg" />
+                            <span class="font-weight-bold">Remi - Portfolio WordPress Theme .....</span>
+                        </span>
+
+                        <div class="product-info-line text-center">
+                            <div class="rating product-rating">
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars  "><i class="far fa-star"></i> </span>
+                            </div>
+
+                        </div>
+
+                        <div class="product-info-line mb-2 mt-3 w-100 d-flex justify-content-between">
+                            <div class="product-sales">
+                                <span class="product-sales_amount">
+                                    995
+                                </span> Sales
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="product-price_regular mr-2 mt-1">$69</div>
+                                <div class="product-price product-price_discount">
+                                    $55
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-image-links2 d-flex justify-content-between p-2">
+                            <div class="w-100 mr-3"> <button type="button" class="btn btn-primary p-2 btn-block ">   Live Demo </button> </div>
+
+                            <div class="w-100"><button type="button" class="btn btn-secondary p-2 btn-block"> Details </button> </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="deft-Products shadow">
+
+                    <div class="product-image-wrapper">
+                        <img src="~/assets/images/p-2.png" />
+                    </div>
+
+                    <div class="p-4 mb-3">
+                        <span class="product-sale-label d-flex mb-2 mt-3 w-100">
+                            <img style="width:20px;height:20px;margin-right:5px" src="~/assets/images/favicon.svg" />
+                            <span class="font-weight-bold">Remi - Portfolio WordPress Theme .....</span>
+                        </span>
+
+                        <div class="product-info-line text-center">
+                            <div class="rating product-rating">
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars  "><i class="far fa-star"></i> </span>
+                            </div>
+
+                        </div>
+
+                        <div class="product-info-line mb-2 mt-3 w-100 d-flex justify-content-between">
+                            <div class="product-sales">
+                                <span class="product-sales_amount">
+                                    995
+                                </span> Sales
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="product-price_regular mr-2 mt-1">$69</div>
+                                <div class="product-price product-price_discount">
+                                    $55
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-image-links2 d-flex justify-content-between p-2">
+                            <div class="w-100 mr-3"> <button type="button" class="btn btn-primary p-2 btn-block ">   Live Demo </button> </div>
+
+                            <div class="w-100"><button type="button" class="btn btn-secondary p-2  btn-block"> Details </button> </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="deft-Products shadow">
+
+
+                    <div class="product-image-wrapper">
+                        <img src="~/assets/images/p-3.png" />
+                    </div>
+
+                    <div class="p-4 mb-3">
+                        <span class="product-sale-label d-flex mb-2 mt-3 w-100">
+                            <img style="width:20px;height:20px;margin-right:5px" src="~/assets/images/favicon.svg" />
+                            <span class="font-weight-bold">Remi - Portfolio WordPress Theme .....</span>
+                        </span>
+
+                        <div class="product-info-line text-center">
+                            <div class="rating product-rating">
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars product-rating-stars "><i class="fas fa-star"></i> </span>
+                                <span class="rating-stars  "><i class="far fa-star"></i> </span>
+                            </div>
+
+                        </div>
+
+                        <div class="product-info-line mb-2 mt-3 w-100 d-flex justify-content-between">
+                            <div class="product-sales">
+                                <span class="product-sales_amount">
+                                    995
+                                </span> Sales
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="product-price_regular mr-2 mt-1">$69</div>
+                                <div class="product-price product-price_discount">
+                                    $55
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-image-links2 d-flex justify-content-between p-2">
+                            <div class="w-100 mr-3"> <button type="button" class="btn btn-primary p-2 btn-block ">   Live Demo </button> </div>
+
+                            <div class="w-100"><button type="button" class="btn btn-secondary p-2 btn-block"> Details </button> </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

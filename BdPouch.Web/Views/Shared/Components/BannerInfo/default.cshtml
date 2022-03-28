@@ -1,0 +1,38 @@
+﻿@model Banner
+@if (Model != null)
+{
+    <div class="banner-arightt-center heading-container">
+
+        <div class="mt-5">
+            <h1 class="display-4 color-theme">@Model.Title</h1>
+            <div class="sb-example-1 p-3">
+                <div class="text-center display-catalog-title pb-3">
+                    <h3>@Model.Description</h3>
+                </div>
+            </div>
+            <div>
+                <img src="~/assets/images/barcode_banner-1536x322.jpg" height="80" />
+            </div>
+        </div>
+    </div>
+}
+else
+{
+
+    <div class="banner-arightt-center heading-container">
+
+        <div class="mt-5">
+            <h1 class="display-4 color-theme">Banner title</h1>
+            <div class="sb-example-1 p-3">
+                <div class="text-center display-catalog-title pb-3">
+                    <h3>Description</h3>
+                </div>
+            </div>
+            <div>
+                <img src="~/assets/images/barcode_banner-1536x322.jpg" height="80" />
+            </div>
+        </div>
+    </div>
+
+}
+

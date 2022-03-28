@@ -1110,3 +1110,11 @@ left nave item*/
 .github:hover {
     background: #1B1F23
 }
+.btn-theme{
+    background:#0077B5;
+    color:white;
+}
+.btn-theme :hover{
+    background:#0cd9ee;
+    color:black;
+}

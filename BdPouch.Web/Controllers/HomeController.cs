@@ -1,4 +1,5 @@
-﻿using BdPouch.Web.Models;
+﻿using BdPouch.Service.HomePages;
+using BdPouch.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,18 @@ namespace BdPouch.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IHomePageService _homePageService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            IHomePageService homePageService)
         {
             _logger = logger;
+            _homePageService = homePageService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _homePageService.GetHomePage());
         }
 
         public IActionResult Privacy()
