@@ -1,0 +1,11 @@
+﻿@model Header
+@if (Model != null)
+{
+    <meta name="title" content="@Model.Title">
+    <meta name="tags" content="@Model.Tags">
+    <meta name="author" content="@Model.Author">
+    <meta name="description" content="@Model.Description">
+    <meta name="keywords" content="@Model.Keywords">
+    <title>@ViewData["title"] - @Model.SiteName</title>
+    <link rel="icon" type="image/x-icon" href="@Url.Content(Model.Favicon)">
+}

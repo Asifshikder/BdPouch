@@ -29,4 +29,10 @@
     <Folder Include="wwwroot\useruploads\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\Shared\Components\HeaderWithSeo\default.cshtml" />
+    <None Include="wwwroot\assets\images\favicon.svg" />
+    <None Include="wwwroot\assets\images\logos\deftlogo.svg" />
+  </ItemGroup>
+
 </Project>
