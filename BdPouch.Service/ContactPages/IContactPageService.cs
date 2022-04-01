@@ -10,15 +10,9 @@ namespace BdPouch.Service.ContactPages
 {
     public interface IContactPageService
     {
-            Task<IEnumerable<ContactPage>> GetAllAsync();
-            Task<ContactPage> GetByIdAsync(long id);
-            Task<ContactPage> AddAsync(ContactPage model);
-            Task<bool> UpdateAsync(ContactPage model);
-            Task<int> TotalCountAsync();
-            Task<bool> DeleteById(long id);
-            Task<bool> DeleteAsync(ContactPage model);
-            bool CheckIfExists(long id);
-            Task<PagedModel<ContactPage>> GetPagedListAsync(int page, int pageSize);
+        Task<ContactPage> GetContactPage();
+        Task<ContactPage> Create(ContactPage model);
+        Task<bool> Update(ContactPage model);
     }
 
 }

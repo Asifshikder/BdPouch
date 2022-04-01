@@ -1,0 +1,70 @@
+﻿@model CountryCode
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="content-header">
+    <div class="container-fluid ">
+        <div class="breadcrumb d-flex justify-content-between align-items-center shadow pl-3 pr-3">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item"><a href="/Admin/Home/Index">Home</a></li>
+                <li class="breadcrumb-item"><a href="/Admin/Company/Index">Country</a></li>
+                <li class="breadcrumb-item active">Delete</li>
+            </ol>
+            <div>
+                <a asp-action="Index" class="btn btn-sm btn-theme"><i class="fa fa-arrow-left"></i>Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex w-100">
+                    <div class="">
+                        <span class="card-title"><i class="fas fa-list"></i> Delete @Model.Country</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+
+                    <h4 class="text-themecolor">@Model.Country</h4>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Country)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Country)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Code)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Code)
+                        </dd>
+
+
+                    </dl>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <a asp-action="Index" class="btn btn-cancel mr-1">Cancel</a>
+                    <a class="btn btn-delete" asp-action="DeleteConfirm" asp-route-id="@Model.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#Catalogtreeview").addClass('menu-open');
+            $("#companynav").addClass('active');
+        });
+    </script>
+
+}

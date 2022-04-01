@@ -1,0 +1,81 @@
+﻿@model Company
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    .heading-container {
+        min-height: 250px;
+    }
+</style>
+<div class="banner-arightt-center heading-container">
+
+    <div class="mt-5">
+        <h3 class="color-theme">@Model.CompanyName</h3>
+
+        <div class="m-2">
+            <img src="@Url.Content(Model.CompanyLogo)" height="200" />
+        </div>
+        <div>
+            <a class="btn btn-primary" target="_blank" href="https://@Model.Website"><i class="fa fa-globe"></i> @Model.Website</a>
+        </div>
+    </div>
+</div>
+
+<div class="display-catalog m-3">
+    <div class="m-2 bg-white p-3 rounded">
+        <p>@Model.ShortDescription</p>
+    </div>
+    <div class=" m-2 ">
+        <div class="bg-white rounded p-5">
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Company name
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CompanyName)
+                </dd>
+                <dt class="col-sm-2">
+                    Brand name
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CompanyBrandName)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-2">
+                    Phone number
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+                <dt class="col-sm-2">
+                    Office address
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.OfficeAddress)
+                </dd>
+                <dt class="col-sm-2">
+                    Factory address
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FactoryAddressDetails)
+                </dd>
+                <dt class="col-sm-2">
+                    Facebook
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FacebookUrl)
+                </dd>
+
+
+            </dl>
+        </div>
+    </div>
+</div>
+

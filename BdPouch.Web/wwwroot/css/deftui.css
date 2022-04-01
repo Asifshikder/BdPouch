@@ -30,14 +30,16 @@ a {
     text-decoration: none !important;
     background-color: transparent;
 }
+
 .msp-navbar .navbar-toggler {
     padding: 0.45rem 0.75rem;
     font-size: 1.25rem;
     line-height: 1;
     background-color: transparent;
     border: 1px solid #00000021;
-    border-radius:0rem !important;
+    border-radius: 0rem !important;
 }
+
 .nav-link.active {
     color: #29aae1;
 }
@@ -633,6 +635,7 @@ a:hover {
     background-color: #fff;
 }
 
+
 .item-img-two {
     -webkit-box-flex: 0;
     -ms-flex: none;
@@ -1061,11 +1064,11 @@ left nave item*/
 
 .fixed-social-icon {
     position: fixed;
-    top:30%;
+    top: 30%;
     width: 50px;
     background: #fff;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
-    left:0px;
+    left: 0px;
     z-index: 12000;
     display: block
 }
@@ -1076,14 +1079,15 @@ left nave item*/
     border-bottom: 1px solid #eee;
     transition: 0.3s ease-in-out;
 }
-.main-social-icon ul li:last-child {
 
-    border-bottom: none !important;
-}
+    .main-social-icon ul li:last-child {
+        border-bottom: none !important;
+    }
 
-.main-social-icon ul li:hover a {
-        color: #fff!important;
-}
+    .main-social-icon ul li:hover a {
+        color: #fff !important;
+    }
+
     .main-social-icon ul li a {
         color: #f00fff !important;
     }
@@ -1099,22 +1103,48 @@ left nave item*/
 .instagram:hover {
     background: #0274B3
 }
+
 .twitter:hover {
     background: #0084B4
 }
 
 .youtube:hover {
-    background:#E62117
+    background: #E62117
 }
 
 .github:hover {
     background: #1B1F23
 }
-.btn-theme{
-    background:#0077B5;
-    color:white;
+
+.btn-theme {
+    background: #0077B5;
+    color: white;
 }
-.btn-theme :hover{
-    background:#0cd9ee;
-    color:black;
+
+    .btn-theme :hover {
+        background: #0cd9ee;
+        color: black;
+    }
+
+.company-link{
+    color:#6c757d;
+}
+.company-link :hover{
+    color:#ffc107;
+}
+
+.company-link-footer {
+    color: #eee;
+    background:#279dca;
+    margin-top:10px;
+    min-height:40px;
+    display:flex;
+    justify-content:center;
+}
+.company-card{
+    min-height:100px;
+}
+.company-link-logo{
+    height:80px;
+    max-width:100px;
 }

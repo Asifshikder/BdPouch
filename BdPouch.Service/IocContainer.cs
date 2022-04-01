@@ -1,4 +1,7 @@
-﻿using BdPouch.Service.Companies;
+﻿using BdPouch.Service.AboutUss;
+using BdPouch.Service.Companies;
+using BdPouch.Service.ContactPages;
+using BdPouch.Service.CountryCodes;
 using BdPouch.Service.HomeBanners;
 using BdPouch.Service.HomePages;
 using BdPouch.Service.MainSeos;
@@ -20,6 +23,9 @@ namespace BdPouch.Service
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IHomePageService, HomePageService>();
             services.AddTransient<IHomeBannerService, HomeBannerService>();
+            services.AddTransient<IContactPageService, ContactPageService>();
+            services.AddTransient<IAboutUsService, AboutUsService>();
+            services.AddTransient<ICountryCodeService, CountryCodeService>();
             return services;
         }
     }
