@@ -27,7 +27,7 @@
                     <a class="company-link company-link-hover" asp-action="Details" asp-route-id="@item.Id">
                         <div class="bg-white company-card rounded p-2">
                             <div class="d-flex justify-content-center">
-                                <img class="mt-3 company-link-logo" src="@Url.Content(item.CompanyLogo)" height="80"/>
+                                <img class="mt-3 company-link-logo" src="@Url.Content(item.CompanyLogo)" height="80" />
                             </div>
                             <div class="company-link-footer">
                                 <h6 class="">
@@ -43,3 +43,11 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#nav_company").addClass('active');
+        });
+    </script>
+}

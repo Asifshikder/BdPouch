@@ -80,7 +80,15 @@ namespace BdPouch.Service.Products
 
         public async Task<Product> GetByIdAsync(long id)
         {
-            return await repository.GetByIdAsync(id);
+            var product = await repository.GetByIdAsync(id);
+            product.Company = await companyrepository.GetByIdAsync(product.CompanyId);
+            return product;
+
+        }
+
+        public async Task<IEnumerable<Product>> GetListByCompanyId(long companyid)
+        {
+            return repository.AllAsIQueryable().Where(s => s.CompanyId == companyid).ToList();
         }
 
         public async Task<PagedModel<Product>> GetPagedListAsync(int page, int pageSize, long companyid, string terms)

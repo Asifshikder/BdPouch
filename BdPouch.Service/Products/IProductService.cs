@@ -12,6 +12,7 @@ namespace BdPouch.Service.Products
     public interface IProductService
     {
         Task<IEnumerable<Product>> GetAllAsync();
+        Task<IEnumerable<Product>> GetListByCompanyId(long companyid);
         Task<Product> GetByIdAsync(long id);
         Task<Product> AddAsync(ProductViewModel model);
         Task<bool> UpdateAsync(ProductViewModel model);

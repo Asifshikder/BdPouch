@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Product>
+@{
+    int counter = 1;
+}
+@foreach (var item in Model)
+{
+    <a class="btn btn-outline-primary product-link" asp-action="ProductDetails" asp-route-id="@item.Id" style="min-width:60px">
+
+        @counter
+
+    </a>
+
+    counter++;
+}

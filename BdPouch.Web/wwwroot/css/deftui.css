@@ -1126,25 +1126,36 @@ left nave item*/
         color: black;
     }
 
-.company-link{
-    color:#6c757d;
+.company-link {
+    color: #6c757d;
 }
-.company-link :hover{
-    color:#ffc107;
-}
+
+    .company-link :hover {
+        color: #ffc107;
+    }
 
 .company-link-footer {
     color: #eee;
-    background:#279dca;
-    margin-top:10px;
-    min-height:40px;
-    display:flex;
-    justify-content:center;
+    background: #279dca;
+    margin-top: 10px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
 }
-.company-card{
-    min-height:100px;
+
+.company-card {
+    min-height: 100px;
 }
-.company-link-logo{
-    height:80px;
-    max-width:100px;
+
+.company-link-logo {
+    height: 80px;
+    max-width: 100px;
 }
+
+.product-link {
+    color: #0077B5;
+}
+
+    .product-link :hover {
+        color: #ffc107 !important;
+    }

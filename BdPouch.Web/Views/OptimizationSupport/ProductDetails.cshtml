@@ -1,0 +1,142 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Product Details";
+    string GetBarcode(string ean)
+    {
+        string svg;
+        var barcode = Barcoder.Ean.EanEncoder.Encode(ean.ToString());
+        var renderer = new Barcoder.Renderer.Svg.SvgRenderer();
+
+        using (var stream = new System.IO.MemoryStream())
+        using (var reader = new System.IO.StreamReader(stream))
+        {
+            renderer.Render(barcode, stream);
+            stream.Position = 0;
+
+            svg = reader.ReadToEnd();
+        }
+        return svg;
+    }
+    int i;
+}
+
+
+<div class="bg-white rounded mt-60 p-2" style="margin-top:100px">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <h4 class="color-theme">@Model.Title</h4>
+            <h6>Website: <a href="http://@Model.Company.Website">@Model.Company.Website</a></h6>
+            <h5 class="text-primary">@Model.EAN_13</h5>
+            <h5 class="color-theme">@Model.Company.CompanyName</h5>
+        </div>
+        <div class="col-md-4 col-12">
+                @Html.Raw(GetBarcode(Model.EAN_13))
+        </div>
+    </div>
+</div>
+
+<div class="display-catalog m-2 ">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-12 bg-white">
+
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Brand
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Company.CompanyBrandName)
+                </dd>
+                <dt class="col-sm-2">
+                    Product
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Weight/SKU
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Weight_SKU)
+                </dd>
+                <dt class="col-sm-2">
+                    Feature
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Feature)
+                </dd>
+                <dt class="col-sm-2">
+                    Packaging
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Packaging)
+                </dd>
+                <dt class="col-sm-2">
+                    Unit price/ MRP
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UnitPrice)
+                </dd>
+                <dt class="col-sm-2">
+                    EAN
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.EAN_13)
+                </dd>
+                <dt class="col-sm-2">
+                    Manufacurer
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Company.CompanyName)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Country of origin
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CountryOfOrigin)
+                </dd>
+
+
+            </dl>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12 col-12 bg-white text-center pt-5">
+            <img src="@Url.Content(Model.ProductImage)" height="300"/>
+        
+        </div>
+        <div class="col-12 bg-white pt-5 mt-2u rating-stars">
+            <h6 class="text-success">Ownership registration informations:</h6>
+            <div style="border:1px solid black; padding:10px">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-12">
+
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="display-catalog m-3">
+    <div class="bg-white rounded text-left p-2">
+        <h5>Quick Product View Help</h5>
+    </div>
+    <div class="m-2">
+        <div class="bg-white rounded p-5">
+            @await Component.InvokeAsync("CompanyProducts", new { id = Model.CompanyId })
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#nav_ops").addClass('active');
+        });
+    </script>
+}

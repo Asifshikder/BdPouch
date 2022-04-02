@@ -1,38 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Areas\Admin\Data\**" />
-    <Compile Remove="Areas\Admin\Models\**" />
-    <Content Remove="Areas\Admin\Data\**" />
-    <Content Remove="Areas\Admin\Models\**" />
-    <EmbeddedResource Remove="Areas\Admin\Data\**" />
-    <EmbeddedResource Remove="Areas\Admin\Models\**" />
-    <None Remove="Areas\Admin\Data\**" />
-    <None Remove="Areas\Admin\Models\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Areas\Admin\Data\**" />
+		<Compile Remove="Areas\Admin\Models\**" />
+		<Content Remove="Areas\Admin\Data\**" />
+		<Content Remove="Areas\Admin\Models\**" />
+		<EmbeddedResource Remove="Areas\Admin\Data\**" />
+		<EmbeddedResource Remove="Areas\Admin\Models\**" />
+		<None Remove="Areas\Admin\Data\**" />
+		<None Remove="Areas\Admin\Models\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+		<PackageReference Include="SvgLib" Version="1.0.0.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BdPouch.Core\BdPouch.Core.csproj" />
-    <ProjectReference Include="..\BdPouch.Data\BdPouch.Data.csproj" />
-    <ProjectReference Include="..\BdPouch.Service\BdPouch.Service.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BdPouch.Core\BdPouch.Core.csproj" />
+		<ProjectReference Include="..\BdPouch.Data\BdPouch.Data.csproj" />
+		<ProjectReference Include="..\BdPouch.Service\BdPouch.Service.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\useruploads\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="wwwroot\useruploads\" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="Views\Shared\Components\HeaderWithSeo\default.cshtml" />
-    <None Include="wwwroot\assets\images\favicon.svg" />
-    <None Include="wwwroot\assets\images\logos\deftlogo.svg" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="Views\Shared\Components\HeaderWithSeo\default.cshtml" />
+		<None Include="wwwroot\assets\images\favicon.svg" />
+		<None Include="wwwroot\assets\images\logos\deftlogo.svg" />
+	</ItemGroup>
 
 </Project>

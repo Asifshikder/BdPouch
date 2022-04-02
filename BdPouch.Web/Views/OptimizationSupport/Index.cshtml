@@ -23,7 +23,7 @@
         <div class="row">
             @foreach (var item in Model)
             {
-                <div class="col-3 p-2">
+                <div class="col-md-6 col-lg-6 col-sm-6 col-12 p-2">
                     <a class="company-link " asp-action="Details" asp-route-id="@item.Id">
                         <div class="bg-white company-card rounded row p-2">
                             <div class="col-3">
@@ -45,3 +45,11 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#nav_ops").addClass('active');
+        });
+    </script>
+}

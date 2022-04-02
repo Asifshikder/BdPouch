@@ -1,0 +1,45 @@
+﻿@model Company
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    .heading-container {
+        min-height: 250px;
+    }
+</style>
+<div class="banner-arightt-center heading-container">
+
+    <div class="mt-5">
+        <h4 class="color-theme">@Model.CompanyName</h4>
+
+        <div class="m-1">
+            <img src="@Url.Content(Model.CompanyLogo)" height="80" />
+        </div>
+        <div>
+            <a class="btn btn-primary" target="_blank" href="https://@Model.Website"><i class="fa fa-globe"></i> @Model.Website</a>
+        </div>
+        <div class="m-2 bg-light p-3 rounded">
+            <p>@Model.ShortDescription</p>
+        </div>
+    </div>
+</div>
+
+<div class="display-catalog m-3">
+    <div class="bg-light rounded text-left p-2">
+        <h5>Quick Product View Help</h5>
+    </div>
+    <div class="m-2">
+        <div class="bg-white rounded p-5">
+            @await Component.InvokeAsync("CompanyProducts", new { id = Model.Id })
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $("#nav_ops").addClass('active');
+        });
+    </script>
+}
